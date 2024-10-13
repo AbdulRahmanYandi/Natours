@@ -478,6 +478,13 @@ body {
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+.popup:target {
+  opacity: 1;
+  visibility: visible;
 }
 .popup__content {
   width: 75%;
@@ -488,8 +495,11 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(0.5);
   display: table;
   overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s 0.2s;
 }
 .popup__left {
   width: 33.3333333%;
@@ -512,6 +522,25 @@ body {
   column-gap: 4rem;
   column-rule: 1px solid var(--color-grey-dark-2);
   hyphens: auto;
+}
+.popup__close:link, .popup__close:visited {
+  color: var(--color-grey-dark);
+  position: absolute;
+  top: 2.5rem;
+  right: 2.5rem;
+  font-size: 3rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s;
+  line-height: 1;
+}
+.popup__close:hover {
+  color: #7ed56f;
+  transform: scale(1.8);
+}
+.popup:target .popup__content {
+  opacity: 1;
+  transform: scale(1) translate(-50%, -50%);
 }
 
 .story {
