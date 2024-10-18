@@ -5,11 +5,30 @@
     @include clearfix;
     &:not(:last-child){
     margin-bottom: var(--gutter-vertical);
+
+    @include respond(tab-port) {
+        margin-bottom: var(--gutter-vertical-s);
+    }
+    }
+
+    @include respond(tab-port) {
+        max-width: 50rem;
+        padding: 0 3rem;
     }
 [class^='col-'] {
         &:not(:last-child){
             margin-right: var(--gutter-horizontal);
+        
+            @include respond(tab-port) {
+                margin-right: 0;
+                margin-bottom: var(--gutter-vertical-s);
+            }
         }
+
+        @include respond(tab-port) {
+            width: 100% !important;
+        }
+
         float: left;
 }
     .col-1-of-2 {
