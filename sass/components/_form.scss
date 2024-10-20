@@ -15,7 +15,7 @@
     border-bottom: 3px solid transparent;
     font-family: inherit;
     color: inherit;
-    width: 90%;
+    width: 80%;
     display: block;
     transition: all 0.3s;
     @include respond(tab-port){
@@ -55,7 +55,7 @@
   }
 
   &__radio-group {
-    width: 49%;
+    width: 48%;
     display: inline-block;
     @include respond(tab-port){
       width: 100%;
